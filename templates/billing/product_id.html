@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Box Content</title>
+    <style>
+        /* Define styles for the container */
+        .box-container {
+            
+            width: 35%; /* Set the width */
+            padding: 20px; /* Add padding inside the box */
+            margin: 25% 30%;  /* Add margin outside the box */
+            background-color: #f0f0f0; /* Set the background color */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 8px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        /* Define styles for the content inside the container */
+        .box-content {
+            font-size: 16px; /* Set the font size */
+            color: #333; /* Set the text color */
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: auto;
+            }
+        td,th{
+            font-size: large;
+            text-align: center;
+            width: 8%;
+        }
+        h2{
+            text-align: center;
+        }
+        button{
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            background-color: green;
+            border-radius: 3px;
+            border: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container with Box Content -->
+    <div class="box-container">
+        <div class="box-content">
+            <h2>Product Add Successfully</h2>
+            <table>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Name</th>
+                    <th>Size</th>
+                </tr>
+                <tr>
+                    <td>{{product_id}}</td>
+                    <td>{{product_name}}</td>
+                    <td>{{size}}</td>
+                </tr>
+            </table>
+            <center><button><a href="\">Done</a></button></center>
+        </div>
+    </div>
+
+</body>
+</html>

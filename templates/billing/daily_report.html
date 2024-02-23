@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 2px;
+  padding-top: 4px;
+  
+  text-align: center;
+}
+label{
+          text-align: center;
+          font-size: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="{% static 'images/logo.jpg' %}" alt="logo" > -->
+    <img src="logo.png" alt="Example Image">
+    <!-- <img src="{% static 'your_app/images/example.jpg' %}" alt="Example Image"> -->
+    <label style="text-align: center;font-size: xx-large;font-weight: bold;"><center>ROLEX</center></label>
+    <label style="text-align: center;font-size: larger;font-weight: bold;"><center>MEN'S/WOMEN's & FAMILY FASHIONS</center></label>
+
+    <label style="text-align: center;font-size: large;"><center>Adharva Complex, Kaarai Pirivu Road, Aalathur Gate</center></label>
+    <br>
+    <center><h2><u>BILL</u></h2></center>
+    
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Count</th>
+            <th>Mrp</th>
+            <th>Dic</th>
+            <th>Amount</th>
+            <th>Total</th>
+        </tr>
+        {% for datas in data %}
+        <tr>
+            {% if forloop.last%}
+            <td colspan="2">Grand Total</td>
+            {% else %}
+            <td>{{forloop.counter}}</td>
+            {% endif %}
+            {% for key,value in datas.items %}
+            {% if key != 'Grand Total' %}
+            <td>{{key}}</td>
+            {% endif %}
+            {% for key1,value1 in value.items %}
+            <td>{{value1}}</td>
+            {% endfor %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    <br>
+    <table style="border-collapse: collapse;border: none;">
+        <tr style="border: none;">
+            <td style="border: none;text-align: left;font-size: large;padding-left: 8px;">Paid</td>
+            <td style="border: none;text-align: right;font-size: large;padding-right: 8px;">For Rolex Readymade</td>
+        </tr>
+        <tr>
+            <td colspan="2">No Return Policy</td>
+        </tr>
+    </table>
+    <div class="page-break"></div>
+</body>
+</html>

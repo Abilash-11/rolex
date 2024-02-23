@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Define styles for the container */
+        .box-container {
+            
+            width: 35%; /* Set the width */
+            padding: 20px; /* Add padding inside the box */
+            margin: 10% 30%;  /* Add margin outside the box */
+            background-color: #f0f0f0; /* Set the background color */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 8px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        /* Define styles for the content inside the container */
+        .box-content {
+            font-size: 16px; /* Set the font size */
+            color: #333; /* Set the text color */
+        }
+        .box-container2 {
+            width: 70%;
+            padding-left: 20px;
+            margin-left: 15%;
+            padding-top: 10px;
+            padding-bottom: 3%;
+            background-color: #f0f0f0; /* Set the background color */
+            border: 1px solid #ccc; /* Add a border */
+            border-radius: 8px; /* Add rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        /* Define styles for the content inside the container */
+        .box-content2 {
+            font-size: 16px; /* Set the font size */
+            color: #333; /* Set the text color */
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: auto;
+            }
+        td,th{
+            font-size: large;
+            text-align: center;
+            width: 8%;
+        }
+        table{
+            padding: 15%;
+            padding-bottom: 20px;
+        }
+        h2{
+            text-align: center;
+        }
+        button{
+            width: 10%;
+            text-align: center;
+            padding: 10px;
+            margin: 25px;
+            background-color: green;
+            border-radius: 3px;
+            border: 5px;
+        }
+        label,input{
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-container2">
+        <div class="box-content2">
+            <h2>Billing Product</h2>
+            <center><table>
+                <tr>
+                    <th>Product</th>
+                    <th>Count</th>
+                    <th>Mrp</th>
+                    <th>Discount</th>
+                    <th>Amount</th>
+                    <th>Total</th>
+                </tr>
+                {% for data in bill %}
+                <tr>
+                    <td>{{data.name}}</td>
+                    <td>{{data.count}}</td>
+                    <td>{{data.mrp}}</td>
+                    <td>{{data.dis}}</td>
+                    <td>{{data.amount}}</td>
+                    <td>{{data.total}}</td>
+                </tr>
+                {% endfor %}
+            </table></center>
+            <center><form method="POST" action="{% url 'billpdf' %}">
+                {% csrf_token %}
+                <table style="padding-top: 10px;border: none;">
+                <tr style="padding-top: 10px;border: none;">
+                    {% for field in form2 %}
+                    <td style="font-size: large; padding-top: 10px;border: none;text-align: right;">{{ field.label_tag }}</td>
+                    <td style="font-size: large; padding-top: 10px;border: none;text-align: left;">{{field}}</td>
+                    {% endfor %}
+                </tr>
+                <br>
+                <br>
+                <tr style="padding-top: 10px;border: none;">
+                    {% for field in form %}
+                    <td style="font-size: large; padding-top: 10px;border: none;text-align: right;">{{ field.label_tag }}</td>
+                    <td style="font-size: large; padding-top: 10px;border: none;text-align: left;">{{field}}</td>
+                    {% endfor %}
+                </tr>
+            </table>
+                <br>
+            <!-- <button class="btn btn-primary" type="submit"><a href="/billpdf">Submit</a></button> -->
+            <button class="btn btn-primary" type="submit">Submit</button>
+                
+            </form></center>
+        </div>
+    </div>
+</body>
+</html>

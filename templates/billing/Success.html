@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <!-- Include Animate.css (you can download it from https://animate.style/) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .success-container {
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 60px;
+            color: #28a745;
+        }
+
+        .success-message {
+            font-size: 24px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .animation-container {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .back-to-home {
+            margin-top: 20px;
+        }
+
+        .back-to-home a {
+            color: #f5f3f3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-to-home a:hover {
+            text-decoration: underline;
+        }
+        /* button{
+            
+            border: 10px;
+            border-radius: 1px;
+            background-color: #9bdfab;
+            width: 30%;
+            height: 30%;
+            font-size: larger;
+        } */
+        button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1f521f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Add styles for the button response when hovered */
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Add styles for the button response when clicked */
+        button:active {
+            transform: scale(0.95);
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container animation-container animate__animated animate__fadeInUp">
+        <div class="success-icon">&#10004;</div>
+        <div class="success-message">Payment Successful</div>
+
+        <!-- Additional details or confirmation message can be added here -->
+
+        <div class="back-to-home">
+            <p>Continue shopping or go back to Billing<a href="\billing">Home</a></p>
+            <button style="color: #f4f4f4;"><a href="\billing">BACT TO BILL</a></button>
+            <button style="color: #f4f4f4;"><a href="\generatepdf">PDF</a></button>
+        </div>
+    </div>
+</body>
+</html>
