@@ -14,7 +14,7 @@ distlib==0.3.8
 dj-database-url==2.1.0
 Django==5.0.2
 django-environ==0.11.2
-duplicity==2.2.2
+# duplicity==2.2.2
 environ==1.0
 filelock==3.13.1
 fonttools==4.48.1
