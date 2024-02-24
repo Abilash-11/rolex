@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'rolex.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-     'default': dj_database_url.parse('postgres://rolex:SazHNZ7PQbmVP7RtNngbz4BKYS7nKFXr@dpg-cnbr9pmct0pc73fegl5g-a.oregon-postgres.render.com/rolex_hano')
+     'default': dj_database_url.parse('postgres://rolex:njYqEYBEsPSeaOJV5SUs1fY2eBFROdMs@dpg-cncqva6g1b2c739jen70-a.oregon-postgres.render.com/rolex_9ig2')
 }
 
 
