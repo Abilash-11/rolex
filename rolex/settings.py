@@ -12,11 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import environ
-
-env = environ.Env()
-
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,9 +28,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 SECRET_KEY = 'django-insecure-9y9n#-!mpq+6b^sweyk-q)4=xyww_isw*!o-rqgcf4gciu)pet'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -95,7 +90,7 @@ WSGI_APPLICATION = 'rolex.wsgi.application'
 import dj_database_url
 
 DATABASES = {
-     'default': dj_database_url.parse('postgres://rolex:SazHNZ7PQbmVP7RtNngbz4BKYS7nKFXr@dpg-cnbr9pmct0pc73fegl5g-a.oregon-postgres.render.com/rolex_hanoy')
+     'default': dj_database_url.parse('postgres://rolex:SazHNZ7PQbmVP7RtNngbz4BKYS7nKFXr@dpg-cnbr9pmct0pc73fegl5g-a.oregon-postgres.render.com/rolex_hano')
 }
 
 
